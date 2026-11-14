@@ -1,0 +1,117 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.11.05",
+  "_id": "xx2Xq6EBz_DQDXcwlLpa",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "127.0.0.1",
+      "name": "Win10-Host",
+      "id": "001"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "subjectLogonId": "0x8a66f55",
+          "targetUserName": "labtest",
+          "subjectUserSid": "S-1-5-21-<MASKED>-1001",
+          "subjectDomainName": "DESKTOP-DD2TNNV",
+          "targetDomainName": "DESKTOP-DD2TNNV",
+          "targetSid": "S-1-5-21-<MASKED>-1004",
+          "subjectUserName": "yaros"
+        },
+        "system": {
+          "eventID": "4726",
+          "keywords": "0x8020000000000000",
+          "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+          "level": "0",
+          "channel": "Security",
+          "opcode": "0",
+          "message": "\"Удалена учетная запись пользователя.\r\n\r\nСубъект:\r\n\tИдентификатор безопасности:\t\tS-1-5-21-<MASKED>-1001\r\n\tИмя учетной записи:\t\tyaros\r\n\tДомен учетной записи:\t\tDESKTOP-DD2TNNV\r\n\tИдентификатор входа:\t\t0x8A66F55\r\n\r\nЦелевая учетная запись:\r\n\tИдентификатор безопасности:\t\tS-1-5-21-<MASKED>-1004\r\n\tИмя учетной записи:\t\tlabtest\r\n\tДомен учетной записи:\t\tDESKTOP-DD2TNNV\r\n\r\nДополнительные сведения:\r\n\tPrivileges\t-\"",
+          "version": "0",
+          "systemTime": "2026-11-05T12:48:58.4048798Z",
+          "eventRecordID": "1246546",
+          "threadID": "18880",
+          "computer": "DESKTOP-DD2TNNV",
+          "task": "13824",
+          "processID": "784",
+          "severityValue": "AUDIT_SUCCESS",
+          "providerName": "Microsoft-Windows-Security-Auditing"
+        }
+      }
+    },
+    "rule": {
+      "mail": false,
+      "level": 8,
+      "pci_dss": [
+        "8.1.2",
+        "10.2.5"
+      ],
+      "hipaa": [
+        "164.312.a.2.I",
+        "164.312.a.2.II",
+        "164.312.b"
+      ],
+      "tsc": [
+        "CC6.8",
+        "CC7.2",
+        "CC7.3"
+      ],
+      "description": "User account disabled or deleted",
+      "groups": [
+        "windows",
+        "windows_security",
+        "adduser",
+        "account_changed"
+      ],
+      "nist_800_53": [
+        "AC.2",
+        "IA.4",
+        "AU.14",
+        "AC.7"
+      ],
+      "gdpr": [
+        "IV_35.7.d",
+        "IV_32.2"
+      ],
+      "firedtimes": 1,
+      "mitre": {
+        "technique": [
+          "Account Manipulation",
+          "Account Access Removal"
+        ],
+        "id": [
+          "T1098",
+          "T1531"
+        ],
+        "tactic": [
+          "Persistence",
+          "Impact"
+        ]
+      },
+      "id": "60111",
+      "gpg13": [
+        "7.10"
+      ]
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1793880197.1608701",
+    "timestamp": "2026-11-05T12:03:17.635+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-11-05T12:03:17.635Z"
+    ]
+  },
+  "sort": [
+    1793880197635
+  ]
+}

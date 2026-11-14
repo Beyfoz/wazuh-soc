@@ -1,0 +1,116 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.11.05",
+  "_id": "sB2Cq6EBz_DQDXcwK7o6",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "127.0.0.1",
+      "name": "Win10-Host",
+      "id": "001"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "subjectLogonId": "0x8a66f55",
+          "targetUserName": "Администраторы",
+          "memberSid": "S-1-5-21-<MASKED>-1004",
+          "subjectUserSid": "S-1-5-21-<MASKED>-1001",
+          "subjectDomainName": "DESKTOP-DD2TNNV",
+          "targetDomainName": "Builtin",
+          "targetSid": "S-1-5-32-544",
+          "subjectUserName": "yaros"
+        },
+        "system": {
+          "eventID": "4732",
+          "keywords": "0x8020000000000000",
+          "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+          "level": "0",
+          "channel": "Security",
+          "opcode": "0",
+          "message": "\"Добавлен член локальной группы с включенной безопасностью.\r\n\r\nСубъект:\r\n\tИД безопасности:\t\tS-1-5-21-<MASKED>-1001\r\n\tИмя учетной записи:\t\tyaros\r\n\tДомен учетной записи:\t\tDESKTOP-DD2TNNV\r\n\tИД входа:\t\t0x8A66F55\r\n\r\nЧлен:\r\n\tИД безопасности:\t\tS-1-5-21-<MASKED>-1004\r\n\tИмя учетной записи:\t\t-\r\n\r\nГруппа:\r\n\tИД безопасности:\t\tS-1-5-32-544\r\n\tИмя группы:\t\tАдминистраторы\r\n\tДомен группы:\t\tBuiltin\r\n\r\nДополнительные сведения:\r\n\tПривилегии:\t\t-\"",
+          "version": "0",
+          "systemTime": "2026-11-05T12:03:54.5909008Z",
+          "eventRecordID": "1246265",
+          "threadID": "3680",
+          "computer": "DESKTOP-DD2TNNV",
+          "task": "13826",
+          "processID": "784",
+          "severityValue": "AUDIT_SUCCESS",
+          "providerName": "Microsoft-Windows-Security-Auditing"
+        }
+      }
+    },
+    "rule": {
+      "mail": true,
+      "level": 12,
+      "pci_dss": [
+        "8.1.2",
+        "10.2.5"
+      ],
+      "hipaa": [
+        "164.312.a.2.I",
+        "164.312.a.2.II",
+        "164.312.b"
+      ],
+      "tsc": [
+        "CC6.8",
+        "CC7.2",
+        "CC7.3"
+      ],
+      "description": "Administrators Group Changed",
+      "groups": [
+        "windows",
+        "windows_security",
+        "group_changed",
+        "win_group_changed"
+      ],
+      "nist_800_53": [
+        "AC.2",
+        "IA.4",
+        "AU.14",
+        "AC.7"
+      ],
+      "gdpr": [
+        "IV_35.7.d",
+        "IV_32.2"
+      ],
+      "firedtimes": 1,
+      "mitre": {
+        "technique": [
+          "Domain Policy Modification"
+        ],
+        "id": [
+          "T1484"
+        ],
+        "tactic": [
+          "Defense Evasion",
+          "Privilege Escalation"
+        ]
+      },
+      "id": "60154",
+      "gpg13": [
+        "7.10"
+      ]
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1793878789.1508755",
+    "timestamp": "2026-11-05T11:39:49.650+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-11-05T11:39:49.650Z"
+    ]
+  },
+  "sort": [
+    1793878789650
+  ]
+}

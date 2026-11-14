@@ -1,0 +1,129 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.11.05",
+  "_id": "qx2Aq6EBz_DQDXcwVbov",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "127.0.0.1",
+      "name": "Win10-Host",
+      "id": "001"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "subjectLogonId": "0x8a66f55",
+          "scriptPath": "%%1793",
+          "passwordLastSet": "%%1794",
+          "homeDirectory": "%%1793",
+          "userParameters": "%%1793",
+          "subjectDomainName": "DESKTOP-DD2TNNV",
+          "displayName": "%%1793",
+          "accountExpires": "%%1794",
+          "homePath": "%%1793",
+          "samAccountName": "labtest",
+          "targetUserName": "labtest",
+          "subjectUserSid": "S-1-5-21-<MASKED>-1001",
+          "primaryGroupId": "513",
+          "logonHours": "%%1797",
+          "targetDomainName": "DESKTOP-DD2TNNV",
+          "profilePath": "%%1793",
+          "userWorkstations": "%%1793",
+          "oldUacValue": "0x0",
+          "newUacValue": "0x15",
+          "targetSid": "S-1-5-21-<MASKED>-1004",
+          "userAccountControl": "    %%2080    %%2082    %%2084",
+          "subjectUserName": "yaros"
+        },
+        "system": {
+          "eventID": "4720",
+          "keywords": "0x8020000000000000",
+          "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+          "level": "0",
+          "channel": "Security",
+          "opcode": "0",
+          "message": "\"Создана учетная запись пользователя.\r\n\r\nСубъект:\r\n\tИдентификатор безопасности:\t\tS-1-5-21-<MASKED>-1001\r\n\tИмя учетной записи:\t\tyaros\r\n\tДомен учетной записи:\t\tDESKTOP-DD2TNNV\r\n\tИдентификатор входа:\t\t0x8A66F55\r\n\r\nНовая учетная запись:\r\n\tИдентификатор безопасности:\t\tS-1-5-21-<MASKED>-1004\r\n\tИмя учетной записи:\t\tlabtest\r\n\tДомен учетной записи:\t\tDESKTOP-DD2TNNV\r\n\r\nАтрибуты:\r\n\tИмя учетной записи SAM:\tlabtest\r\n\tОтображаемое имя:\t\t<значение не задано>\r\n\tОсновное имя пользователя:\t-\r\n\tДомашний каталог:\t\t<значение не задано>\r\n\tДомашний диск:\t\t<значение не задано>\r\n\tПуть к сценарию:\t\t<значение не задано>\r\n\tПуть к профилю:\t\t<значение не задано>\r\n\tРабочие станции пользователя:\t<значение не задано>\r\n\tПоследний пароль задан:\t<никогда>\r\n\tСрок действия учетной записи истекает:\t\t<никогда>\r\n\tИдентификатор основной группы:\t513\r\n\tРазрешено делегировать:\t-\r\n\tСтарое значение UAC:\t\t0x0\r\n\tНовое значение UAC:\t\t0x15\r\n\tУправление учетной записью пользователя:\t\r\n\t\tУчетная запись отключена\r\n\t\t\"Пароль не требуется\" - включено\r\n\t\t\"Обычная учетная запись\" - включено\r\n\tПараметры пользователя:\t<значение не задано>\r\n\tЖурнал SID:\t\t-\r\n\tЧасы входа:\t\tВсе\r\n\r\nДополнительные сведения:\r\n\tPrivileges\t\t-\"",
+          "version": "0",
+          "systemTime": "2026-11-05T12:00:19.9003824Z",
+          "eventRecordID": "1246240",
+          "threadID": "18068",
+          "computer": "DESKTOP-DD2TNNV",
+          "task": "13824",
+          "processID": "784",
+          "severityValue": "AUDIT_SUCCESS",
+          "providerName": "Microsoft-Windows-Security-Auditing"
+        }
+      }
+    },
+    "rule": {
+      "mail": false,
+      "level": 8,
+      "pci_dss": [
+        "8.1.2",
+        "10.2.5"
+      ],
+      "hipaa": [
+        "164.312.a.2.I",
+        "164.312.a.2.II",
+        "164.312.b"
+      ],
+      "tsc": [
+        "CC6.8",
+        "CC7.2",
+        "CC7.3"
+      ],
+      "description": "User account enabled or created",
+      "groups": [
+        "windows",
+        "windows_security",
+        "adduser",
+        "account_changed"
+      ],
+      "nist_800_53": [
+        "AC.2",
+        "IA.4",
+        "AU.14",
+        "AC.7"
+      ],
+      "gdpr": [
+        "IV_35.7.d",
+        "IV_32.2"
+      ],
+      "firedtimes": 2,
+      "mitre": {
+        "technique": [
+          "Account Manipulation"
+        ],
+        "id": [
+          "T1098"
+        ],
+        "tactic": [
+          "Persistence"
+        ]
+      },
+      "id": "60109",
+      "gpg13": [
+        "7.10"
+      ]
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1793878672.1469003",
+    "timestamp": "2026-11-05T11:37:52.349+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-11-05T11:37:52.349Z"
+    ]
+  },
+  "sort": [
+    1793878672349
+  ]
+}
